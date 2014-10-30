@@ -1,3 +1,5 @@
 *.class
 .gradle
 +build/
+gradle-app.setting
+.DS_STORE
