@@ -10,7 +10,11 @@ public class Player {
 		wins = 0;
 		symbol = newSymbol;
 	}
-
-	
+	public void setName(String name){
+		this.name = name;
+	}
+	public String getName(){
+		return name;
+	}
 }
 
