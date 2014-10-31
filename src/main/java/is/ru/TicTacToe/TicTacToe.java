@@ -26,14 +26,17 @@ public class TicTacToe {
 	}
 
 	public Player getPlayerTurn() {
-		if (this.playerTurn)
-		{
+		if (this.playerTurn){
 			return player1;
 		}
-		else
-		{
+		else {
 			return player2;
 		}
+	}
+
+	public String getScoreMessager(){
+		return player1.getName() + ":" + player1.getScore() + "  |  " 
+				+ player2.getName() + ":" + player2.getScore();
 	}
 
 	public void resetBoard(){
