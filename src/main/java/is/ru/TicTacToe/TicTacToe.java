@@ -16,8 +16,8 @@ public class TicTacToe{
 
 	}
 
-	public void makeMove(Player player, int move){
-		
+	private void makeMove(Player player, int move){
+
 	}
 
 	private Player whoIsWinner(){
