@@ -14,7 +14,7 @@ public class TicTacToe {
 		play();
 	}
 
-	private void play() {
+	public void play() {
 		 boolean playerTurn = true;
 		 do{
 		 	if(playerTurn) {
@@ -45,12 +45,12 @@ public class TicTacToe {
 	}
 
 
-	private void resetAndPlay(){
+	public void resetAndPlay(){
 		board = new Board();
 		play();
 	}
 
-	private boolean playAgain(){
+	public boolean playAgain(){
 		Scanner in = new Scanner(System.in);
 		System.out.println("Want to play again? y/n");
 		String ans = in.nextLine();
@@ -60,7 +60,7 @@ public class TicTacToe {
 		return false;
 	}
 
-	private int getMove(Player player){
+	public int getMove(Player player){
 		Scanner in = new Scanner(System.in);
 		System.out.print(player.getName() + " move: ");
 		int move = in.nextInt();
@@ -75,7 +75,7 @@ public class TicTacToe {
 		return move;
 	}
 
-	private void getNames(){
+	public void getNames(){
 		Scanner in = new Scanner(System.in);
 		System.out.println("Welcome to the TicTacToe game!");
 		System.out.print("Enter name for player1: ");
@@ -84,15 +84,15 @@ public class TicTacToe {
 		player2.setName(in.nextLine());
 	}
 
-	private void makeMove(Player player, int move){
+	public void makeMove(Player player, int move){
 		board.setTile(move, player.getSymbol());
 	}
 
-	private boolean isGameOver(){
+	public boolean isGameOver(){
 		return board.isFull() || board.hasWinner();
 	}
 
-	private Player whoIsWinner(){
+	public Player whoIsWinner(){
 		if(board.hasThreeInRow(player1.getSymbol())){ // did player1 win ?
 			player1.increaseScore();
 			return player1;
