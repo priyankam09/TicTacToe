@@ -84,4 +84,23 @@ public class BoardTest {
     	board.setTile(7, 'O');
     	assertTrue(!board.hasThreeInRow('O'));
     }
+
+    @Test
+    public void testHasWinner(){
+    	Board board = new Board();
+    	board.setTile(6, 'X');
+    	board.setTile(1, 'O');
+    	board.setTile(2, 'X');
+    	board.setTile(3, 'O');
+    	board.setTile(7, 'X');
+    	board.setTile(5, 'O');
+    	board.setTile(8, 'X');
+    	board.setTile(9, 'O');
+    	/*
+    		O X O
+    		  O X
+    		X X O
+		*/
+    	assertTrue(board.hasWinner());
+    }
 }
