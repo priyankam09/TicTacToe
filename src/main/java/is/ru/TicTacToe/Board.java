@@ -39,10 +39,6 @@ public class Board {
     }
 
     public boolean hasWinner(){
-    	return false;
-    }
-
-    public boolean hasThreeInRow(char symbol){
     	// RowAcross \
     	if(getTile(1) != ' ' && getTile(1) == getTile(5) && getTile(1) == getTile(9)){
     		return true;
@@ -57,6 +53,27 @@ public class Board {
     	} // RowVertically |
 		for(int i = 1; i <= TILES; i++){
     		if (getTile(i) != ' ' && getTile(i) == getTile(i + 3) && getTile(i) == getTile(i + 6)) {
+    			return true;
+    		}
+    	}
+    	return false;
+    }
+
+    public boolean hasThreeInRow(char symbol){
+    	// RowAcross \
+    	if(getTile(1) == symbol && getTile(5) == symbol && getTile(9) == symbol){
+    		return true;
+    	} // RowAcross /
+    	if (getTile(3) == symbol && getTile(5) == symbol && getTile(7) == symbol){
+    		return true;
+    	} // RowHorizontally -
+    	for(int i = 1; i <= TILES; i++){
+    		if (getTile(i) == symbol && getTile(i + 1) == symbol && getTile(i + 2) == symbol) {
+    			return true;
+    		}
+    	} // RowVertically |
+		for(int i = 1; i <= TILES; i++){
+    		if (getTile(i) == symbol && getTile(i + 3) == symbol && getTile(i + 6) == symbol) {
     			return true;
     		}
     	}
