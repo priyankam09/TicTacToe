@@ -18,5 +18,13 @@ public class Player {
 	public String getName(){
 		return name;
 	}
+
+	public int getWins() {
+		return wins;
+	}
+	
+	public void increaseWins() {
+		this.wins++;
+	}
 }
 
