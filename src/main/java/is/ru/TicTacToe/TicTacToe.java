@@ -15,16 +15,28 @@ public class TicTacToe {
 
 	public void play() {
 		 getNames();
-		 
+		 boolean playerTurn = true;
+		 do{
+		 	if(playerTurn) {
+		 		int move = getMove(player1);
+		 	}
+		 }while(!isGameOver());
+
+	}
+
+	private int getMove(Player player){
+		Scanner in = new Scanner(System.in);
+		int move = in.nextInt();
+		return move;
 	}
 
 	private void getNames(){
 		Scanner in = new Scanner(System.in);
-		 System.out.println("Welcome to the TicTacToe game!");
-		 System.out.print("Enter name for player1: ");
-		 player1.setName(in.nextLine());
-		 System.out.print("Enter name for player2: ");
-		 player2.setName(in.nextLine());
+		System.out.println("Welcome to the TicTacToe game!");
+		System.out.print("Enter name for player1: ");
+		player1.setName(in.nextLine());
+		System.out.print("Enter name for player2: ");
+		player2.setName(in.nextLine());
 	}
 
 	private void makeMove(Player player, int move){
