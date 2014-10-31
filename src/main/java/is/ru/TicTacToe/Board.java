@@ -19,7 +19,13 @@ public class Board {
     }
 
     public void display(){
-        return;
+		for(int i = 0; i < TILES; i++){
+			for (int j = 0; j < TILES; j++){
+				System.out.print(tiles[i][j]);
+			}
+			System.out.println();
+		}
+		System.out.println();
     }
 
     public boolean isTileSet(int tile){
