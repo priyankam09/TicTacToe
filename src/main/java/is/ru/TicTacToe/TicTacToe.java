@@ -19,6 +19,21 @@ public class TicTacToe {
 		 do{
 		 	if(playerTurn) {
 		 		int move = getMove(player1);
+		 		while(move > 0 && move < 10) {
+		 			System.out.print("Input must be between 1 and 9");
+		 			getMove(player1);
+		 		}
+		 		makeMove(player1, move);
+		 		playerTurn = false;
+		 	}
+		 	else {
+		 		int move = getMove(player2);
+		 		while(move > 0 && move < 10) {
+		 			System.out.print("Input must be between 1 and 9");
+		 			getMove(player2);
+		 		}
+		 		makeMove(player2, move);
+		 		playerTurn = true;
 		 	}
 		 }while(!isGameOver());
 
