@@ -21,7 +21,33 @@ public class Board {
     }
 
     public void setTile(int tile, char symbol){
-    	return;
+		int i, j;
+		switch(tile) {
+		case 1:
+		case 2:
+		case 3:
+			i = 0;
+			j = tile - 1;
+			break;
+		case 4:
+		case 5:
+		case 6:
+			i = 1;
+			j = tile - 4;
+			break;
+		case 7:
+		case 8:
+		case 9:
+			i = 2;
+			j = tile - 7;
+			break;
+		default:
+			i = -1;
+			j = -1;
+		}
+		if(!(i == -1 && j == -1)) {
+			tiles[i][j] = symbol;
+		}
     }
 
     public boolean hasWinner(){
