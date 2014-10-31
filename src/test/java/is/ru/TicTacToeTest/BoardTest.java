@@ -21,7 +21,7 @@ public class BoardTest {
     public ExpectedException ex = ExpectedException.none();
 
     @Test
-    public void testGetTile(){
+    public void testGetTileOutOfBounds(){
     
     	ex.expect(IndexOutOfBoundsException.class);
     	ex.expectMessage(equalTo("Tile out of bounds"));
