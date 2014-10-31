@@ -31,12 +31,13 @@ public class BoardTest {
     }
 
     @Test
-    public void testSetTileOutOfBounds(){
+    public void testSetTileAlreadySet(){
     
-    	ex.expect(IndexOutOfBoundsException.class);
-    	ex.expectMessage(equalTo("Tile out of bounds"));
+    	ex.expect(TileAlreadySetException.class);
+    	ex.expectMessage(equalTo("Tile already set"));
 
     	Board board = new Board();
-        board.setTile(-1, 'X');
+        board.setTile(1, 'X');
+        board.setTile(1, 'O');
     }
 }
