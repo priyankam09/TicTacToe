@@ -10,7 +10,6 @@ public class Player {
 		wins = 0;
 		symbol = newSymbol;
 	}
-
 	
 }
 
