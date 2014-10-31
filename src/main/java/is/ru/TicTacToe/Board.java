@@ -12,6 +12,9 @@ public class Board {
             }
         }
     }
+    public char getTile(int i, int j) {
+    	return tiles[i][j];
+    }
 
     public void display(){
         return;
