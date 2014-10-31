@@ -13,8 +13,8 @@ public class Board {
         }
     }
     public char getTile(int tile) {
-		int i = getRow(tile);
-		int j = getColumn(tile);
+		int i = getColumn(tile);
+		int j = getRow(tile);
     	return tiles[i][j];
     }
 
@@ -29,9 +29,8 @@ public class Board {
     }
 
     public boolean isTileSet(int tile){
-
-		int i = getRow(tile);
-		int j = getColumn(tile);
+		int i = getColumn(tile);
+		int j = getRow(tile);
     	if(tiles[i][j] == ' '){
     		return false;
     	}else
@@ -39,8 +38,8 @@ public class Board {
     }
 
     public void setTile(int tile, char symbol){
-		int i = getRow(tile);
-		int j = getColumn(tile);
+		int i = getColumn(tile);
+		int j = getRow(tile);
 		tiles[i][j] = symbol;
     }
 
