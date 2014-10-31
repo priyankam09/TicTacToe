@@ -66,7 +66,7 @@ public class TicTacToe {
 	}
 
 	private boolean isGameOver(){
-		return false;
+		return board.isFull() || board.hasWinner();
 	}
 
 	private Player whoIsWinner(){
