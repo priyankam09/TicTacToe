@@ -23,7 +23,13 @@ public class Board {
     }
 
     public boolean isTileSet(int tile){
-    	return false;
+    	
+    	int i = (tile + 2) % 3;
+		int j = (tile - 1) / 3;
+    	if(tiles[i][j] == ' '){
+    		return false;
+    	}else
+    		return true;
     }
 
     public void setTile(int tile, char symbol){
