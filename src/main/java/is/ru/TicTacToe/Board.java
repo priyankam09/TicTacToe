@@ -12,8 +12,14 @@ public class Board {
             }
         }
     }
-    public char getTile(int i, int j) {
-    	return tiles[i][j];
+    public char getTile(int tile) {
+
+    	if(tile > 0 && tile < 10){
+			int i = (tile + 2) % 3;
+			int j = (tile - 1) / 3;
+			return tiles[i][j];
+		}else
+			throw new IndexOutOfBoundsException("Tile out of bounds");
     }
 
     public void display(){
@@ -27,6 +33,7 @@ public class Board {
 			int j = (tile - 1) / 3;
 			tiles[i][j] = symbol;
 		}
+
     }
 
     public boolean hasWinner(){
