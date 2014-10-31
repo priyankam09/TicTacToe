@@ -12,6 +12,19 @@ public class TicTacToe{
 		board = new Board();
 	}
 
+	public void play() {
+
+	}
+
+	public void makeMove(Player player, int move){
+		
+	}
+
+	private Player whoIsWinner(){
+		return player1;
+	}
+
+
 	public static void main(String[] args){
 		
 	}
