@@ -1,4 +1,4 @@
-package is.ru.sparkit;
+package is.ru.TicTacToe;
 
 import spark.*;
 import static spark.Spark.*;
@@ -12,7 +12,7 @@ public class TicTacToeWeb implements SparkApplication {
         if (port != null) {
             setPort(Integer.valueOf(port));
         }
-        tictactoeweb.init();
+        tictactoe.init();
     }
     private TicTacToe game;
     public void init(){
@@ -27,4 +27,5 @@ public class TicTacToeWeb implements SparkApplication {
                return true;
             }
         });
+}
 }
