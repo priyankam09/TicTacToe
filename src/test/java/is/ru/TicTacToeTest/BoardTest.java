@@ -24,4 +24,13 @@ public class BoardTest {
     	board.setTile(9, 'O');
     	assertTrue(board.isTileSet(9));
     }
+
+    @Test
+    public void testIsBoardFull(){
+    	Board board = new Board();
+    	for(int i = 1; i < 10; i++){
+    		board.setTile(i, 'O');
+    	}
+    	assertTrue(board.isFull());
+    }
 }
