@@ -30,14 +30,21 @@ public class BoardTest {
         board.getTile(-1);
     }
 
-    @Test
-    public void testSetTileAlreadySet(){
+        @Test
+    public void testSetTileOutOfBounds(){
     
-    	ex.expect(TileAlreadySetException.class);
-    	ex.expectMessage(equalTo("Tile already set"));
+    	ex.expect(IndexOutOfBoundsException.class);
+    	ex.expectMessage(equalTo("Tile out of bounds"));
 
     	Board board = new Board();
-        board.setTile(1, 'X');
-        board.setTile(1, 'O');
+        board.setTile(-1, 'X');
+    }
+
+    @Test
+    public void testSetTileAlreadySet(){
+
+    	Board board = new Board();
+    	board.setTile(1, 'X');
+        assertTrue(!board.setTile(1, 'X'));
     }
 }
