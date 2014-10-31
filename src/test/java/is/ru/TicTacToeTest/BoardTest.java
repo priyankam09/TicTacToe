@@ -29,14 +29,4 @@ public class BoardTest {
     	Board board = new Board();
         board.getTile(-1);
     }
-
-    @Test
-    public void testGetTileOutOfBounds(){
-    
-    	ex.expect(IndexOutOfBoundsException.class);
-    	ex.expectMessage(equalTo("Tile out of bounds"));
-
-    	Board board = new Board();
-        board.getTile(-1, 'X');
-    }
 }
