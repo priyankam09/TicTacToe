@@ -1,7 +1,10 @@
 /*Test class for board */
 package is.ru.TicTacToe;
 import org.junit.Test;
+import org.junit.Rule;
 import static org.junit.Assert.*;
+import org.junit.rules.ExpectedException;
+import static org.hamcrest.core.IsEqual.equalTo;
 
 public class BoardTest {
        public static void main(String args[]) {
@@ -12,6 +15,18 @@ public class BoardTest {
     public void testSetTile(){
        Board board = new Board();
                board.setTile(1, 'X');
-               assertEquals('X', board.getTile(0, 0));
+               assertEquals('X', board.getTile(1));
+    }
+    @Rule
+    public ExpectedException ex = ExpectedException.none();
+
+    @Test
+    public void testGetTile(){
+    
+    	ex.expect(IndexOutOfBoundsException.class);
+    	ex.expectMessage(equalTo("Tile out of bounds"));
+
+    	Board board = new Board();
+        board.getTile(-1);
     }
 }
