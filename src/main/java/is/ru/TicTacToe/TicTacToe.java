@@ -10,36 +10,20 @@ public class TicTacToe {
 		player1 = new Player("player1", 'X');
 		player2 = new Player("player2", 'O');
 		board = new Board();
+		getNames();
 		play();
 	}
 
-	public void play() {
-		 getNames();
+	private void play() {
 		 boolean playerTurn = true;
 		 do{
 		 	if(playerTurn) {
 		 		int move = getMove(player1);
-		 		while(move < 1 && move > 9) {
-		 			System.out.println("Input must be between 1 and 9");
-		 			move = getMove(player1);
-		 		}
-		 		while(board.isTileSet(move)){
-		 			System.out.println("Tile is set enter another tile");
-		 			move = getMove(player1);
-		 		}
 		 		makeMove(player1, move);
 		 		playerTurn = false;
 		 	}
 		 	else {
 		 		int move = getMove(player2);
-		 		while(move < 1 && move > 9) {
-		 			System.out.println("Input must be between 1 and 9");
-		 			move = getMove(player2);
-		 		}
-		 		while(board.isTileSet(move)){
-		 			System.out.println("Tile is set enter another tile");
-		 			move = getMove(player2);
-		 		}
 		 		makeMove(player2, move);
 		 		playerTurn = true;
 		 	}
@@ -50,15 +34,44 @@ public class TicTacToe {
 		 	System.out.println("It's a tie");
 		 }
 		 else {
-		 	System.out.println(whoIsWinner().getName() + " won!");
+		 	System.out.println(whoIsWinner().getName() + " won!");	
+		 }
+		 System.out.println(player1.getName() + " Score: " + player1.getScore());
+		 System.out.println(player2.getName() + " Score: " + player2.getScore());
+		 if(playAgain()) {
+		 	resetAndPlay();
 		 }
 
+	}
+
+
+	private void resetAndPlay(){
+		board = new Board();
+		play();
+	}
+
+	private boolean playAgain(){
+		Scanner in = new Scanner(System.in);
+		System.out.println("Want to play again? y/n");
+		String ans = in.nextLine();
+		if (ans.equals("y") || ans.equals("Y")) {
+			return true;
+		}
+		return false;
 	}
 
 	private int getMove(Player player){
 		Scanner in = new Scanner(System.in);
 		System.out.print(player.getName() + " move: ");
 		int move = in.nextInt();
+		if(move < 1 || move > 9) {
+		 	System.out.println("Input must be between 1 and 9");
+		 	move = getMove(player);
+		 }
+		 if(board.isTileSet(move)){
+		 	System.out.println("Tile is set enter another tile");
+		 	move = getMove(player);
+		 }
 		return move;
 	}
 
