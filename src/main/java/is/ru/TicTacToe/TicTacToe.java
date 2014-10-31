@@ -70,7 +70,14 @@ public class TicTacToe {
 	}
 
 	private Player whoIsWinner(){
-		return player1;
+		if(board.hasThreeInRow(player1.getSymbol())){ // did player1 win ?
+			player1.increaseScore();
+			return player1;
+		}
+		else{
+			player2.increaseScore();
+			return player2;
+		}
 	}
 
 
