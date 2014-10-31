@@ -28,7 +28,7 @@ dependencies {
    
 }
 jar {
-	manifest { attributes("Main-Class": "is.ru.TicTacToe.TicTacToe") }
+	manifest { attributes("Main-Class": "is.ru.TicTacToe.TicTacToeWeb") }
 
 }
 task stage { 
