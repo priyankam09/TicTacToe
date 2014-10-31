@@ -2,12 +2,12 @@ package is.ru.TicTacToe;
 
 public class Player {
 	private String name;
-	private int wins;
+	private int score;
 	private char symbol;
 
 	public Player(String newName, char newSymbol) {
 		name = newName;
-		wins = 0;
+		score = 0;
 		symbol = newSymbol;
 	}
 	
@@ -19,12 +19,12 @@ public class Player {
 		return name;
 	}
 
-	public int getWins() {
-		return wins;
+	public int getScore() {
+		return score;
 	}
 	
-	public void increaseWins() {
-		this.wins++;
+	public void increaseScore() {
+		this.score++;
 	}
 }
 
