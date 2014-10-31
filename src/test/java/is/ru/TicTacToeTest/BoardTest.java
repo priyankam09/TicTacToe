@@ -17,4 +17,11 @@ public class BoardTest {
     	board.setTile(1, 'X');
     	assertEquals('X', board.getTile(1));
     }
+
+    @Test
+    public void testTileIsSet(){
+    	Board board = new Board();
+    	board.setTile(9, 'O');
+    	assertTrue(board.isTileSet(9));
+    }
 }
