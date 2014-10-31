@@ -26,6 +26,10 @@ public class Board {
         return;
     }
 
+    public boolean isTileSet(int tile){
+    	return false;
+    }
+
     public void setTile(int tile, char symbol){
 		
 		if(tile > 0 && tile < 10){
@@ -34,7 +38,7 @@ public class Board {
 			if(getTile(tile) == ' '){
 				tiles[i][j] = symbol;
 			}else
-				throw new IndexOutOfBoundsException("Tile already set");
+				throw new TileAlreadySetException("Tile already set");
 		}else
 			throw new IndexOutOfBoundsException("Tile out of bounds");
 
