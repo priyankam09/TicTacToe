@@ -32,7 +32,8 @@ public class Board {
 			int i = (tile + 2) % 3;
 			int j = (tile - 1) / 3;
 			tiles[i][j] = symbol;
-		}
+		}else
+			throw new IndexOutOfBoundsException("Tile out of bounds");
 
     }
 
