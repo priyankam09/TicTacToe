@@ -14,7 +14,12 @@ public class TicTacToe {
 	}
 
 	public void play() {
-		 Scanner in = new Scanner(System.in);
+		 getNames();
+		 
+	}
+
+	private void getNames(){
+		Scanner in = new Scanner(System.in);
 		 System.out.println("Welcome to the TicTacToe game!");
 		 System.out.print("Enter name for player1: ");
 		 player1.setName(in.nextLine());
