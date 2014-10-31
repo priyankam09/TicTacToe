@@ -13,8 +13,8 @@ public class Board {
         }
     }
     public char getTile(int tile) {
-    	int i = (tile + 2) % 3;
-		int j = (tile - 1) / 3;
+		int i = getRow(tile);
+		int j = getColumn(tile);
     	return tiles[i][j];
     }
 
@@ -23,9 +23,9 @@ public class Board {
     }
 
     public boolean isTileSet(int tile){
-    	
-    	int i = (tile + 2) % 3;
-		int j = (tile - 1) / 3;
+
+		int i = getRow(tile);
+		int j = getColumn(tile);
     	if(tiles[i][j] == ' '){
     		return false;
     	}else
@@ -33,8 +33,8 @@ public class Board {
     }
 
     public void setTile(int tile, char symbol){
-		int i = (tile + 2) % 3;
-		int j = (tile - 1) / 3;
+		int i = getRow(tile);
+		int j = getColumn(tile);
 		tiles[i][j] = symbol;
     }
 
@@ -48,6 +48,14 @@ public class Board {
 
     public boolean isFull(){
         return false;
+    }
+
+    private int getRow(int tile){
+    	return (tile + 2) % 3;
+    }
+
+    private int getColumn(int tile){
+		return (tile - 1) / 3;
     }
 }
 
