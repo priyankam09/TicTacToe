@@ -29,4 +29,5 @@ public class PlayerTest {
 		Player p = new Player("Gummi", 'o');
 		p.increaseScore();
 		assertEquals(1, p.getScore());
+	}
 }
