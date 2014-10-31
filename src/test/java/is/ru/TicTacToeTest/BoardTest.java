@@ -33,4 +33,10 @@ public class BoardTest {
     	}
     	assertTrue(board.isFull());
     }
+
+    @Test
+    public void testIsBoardEmpty(){
+    	Board board = new Board();
+    	assertTrue(!board.isFull());
+    }
 }
