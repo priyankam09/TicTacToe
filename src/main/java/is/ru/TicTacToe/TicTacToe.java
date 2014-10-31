@@ -19,35 +19,45 @@ public class TicTacToe {
 		 do{
 		 	if(playerTurn) {
 		 		int move = getMove(player1);
-		 		while(move > 0 && move < 10) {
-		 			System.out.print("Input must be between 1 and 9");
-		 			getMove(player1);
+		 		while(move < 1 && move > 9) {
+		 			System.out.println("Input must be between 1 and 9");
+		 			move = getMove(player1);
+		 		}
+		 		while(board.isTileSet(move)){
+		 			System.out.println("Tile is set enter another tile");
+		 			move = getMove(player1);
 		 		}
 		 		makeMove(player1, move);
 		 		playerTurn = false;
 		 	}
 		 	else {
 		 		int move = getMove(player2);
-		 		while(move > 0 && move < 10) {
-		 			System.out.print("Input must be between 1 and 9");
-		 			getMove(player2);
+		 		while(move < 1 && move > 9) {
+		 			System.out.println("Input must be between 1 and 9");
+		 			move = getMove(player2);
+		 		}
+		 		while(board.isTileSet(move)){
+		 			System.out.println("Tile is set enter another tile");
+		 			move = getMove(player2);
 		 		}
 		 		makeMove(player2, move);
 		 		playerTurn = true;
 		 	}
+		 	board.display();
 		 }while(!isGameOver());
 
 		 if(!board.hasWinner()){
-		 	System.out.print("It's a tie");
+		 	System.out.println("It's a tie");
 		 }
 		 else {
-		 	System.out.print(whoIsWinner().getName() + " won!");
+		 	System.out.println(whoIsWinner().getName() + " won!");
 		 }
 
 	}
 
 	private int getMove(Player player){
 		Scanner in = new Scanner(System.in);
+		System.out.print(player.getName() + " move: ");
 		int move = in.nextInt();
 		return move;
 	}
