@@ -23,4 +23,10 @@ public class PlayerTest {
 		p.setName("Mummi");
 		assertEquals("Mummi", p.getName());
 	}
+
+	@Test
+	public void  testIncreaseScore (){
+		Player p = new Player("Gummi", 'o');
+		p.increaseScore();
+		assertEquals(1, p.getScore());
 }
