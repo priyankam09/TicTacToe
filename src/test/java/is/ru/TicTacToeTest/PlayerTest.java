@@ -30,4 +30,19 @@ public class PlayerTest {
 		p.increaseScore();
 		assertEquals(1, p.getScore());
 	}
+	@Test
+	public void testIncreaseScore () {
+		Player p = new Player("Gummi", 'o');
+		Player q = new Player("Bubbi", 'x');
+		q.increaseScore();
+		assertEquals(0, p.getScore());
+	}
+	@Test
+	public void testIncreaseScore() {
+		Player p = new Player("Gummi", 'o');
+		p.increaseScore();
+		p.increaseScore();
+		assertEquals(2, p.getScore());
+	}
+
 }
