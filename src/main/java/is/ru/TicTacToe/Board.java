@@ -42,7 +42,24 @@ public class Board {
     	return false;
     }
 
-    public boolean hasRow(char symbol){
+    public boolean hasThreeInRow(char symbol){
+    	// RowAcross \
+    	if(getTile(1) != ' ' && getTile(1) == getTile(5) && getTile(1) == getTile(9)){
+    		return true;
+    	} // RowAcross /
+    	if (getTile(3) != ' ' && getTile(3) == getTile(5) && getTile(3) == getTile(7)){
+    		return true;
+    	} // RowHorizontally -
+    	for(int i = 1; i <= TILES; i++){
+    		if (getTile(i) != ' ' && getTile(i) == getTile(i + 1) && getTile(i) == getTile(i + 2)) {
+    			return true;
+    		}
+    	} // RowVertically |
+		for(int i = 1; i <= TILES; i++){
+    		if (getTile(i) != ' ' && getTile(i) == getTile(i + 3) && getTile(i) == getTile(i + 6)) {
+    			return true;
+    		}
+    	}
     	return false;
     }
 
