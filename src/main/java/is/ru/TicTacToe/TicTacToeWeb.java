@@ -14,18 +14,32 @@ public class TicTacToeWeb implements SparkApplication {
         }
         tictactoe.init();
     }
+
     private TicTacToe game;
-    public void init(){
-	if(game == null)
-	{
-	    game = new TicTacToe();
-	}
+    
+    public void init() {
+	   if(game == null) {
+	       game = new TicTacToe();
+        }
         post(new Route("/playGame") {
-        @Override
-        public Object handle(Request request, Response response) {
-               game = new TicTacToe();
-               return true;
+            @Override
+            public Object handle(Request request, Response response) {
+                game = new TicTacToe();
+                return true;
             }
         });
-}
+
+        post(new Route("/id"){
+            @Override
+            public Object handle(Request request, Response response){
+                Integer number = Integer.valueOf(request.queryParams("id"));
+                if(game.isGameOver()) {
+                    return game.getScoreMessager();
+                }
+                else {
+                    return game.play(number);
+                }
+            }
+        });
+    }
 }
