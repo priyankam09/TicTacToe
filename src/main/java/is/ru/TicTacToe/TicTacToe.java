@@ -41,7 +41,7 @@ public class TicTacToe {
 		 	System.out.print("It's a tie");
 		 }
 		 else {
-		 	System.out.print(whoIsWinner.getName() + " won!");
+		 	System.out.print(whoIsWinner().getName() + " won!");
 		 }
 
 	}
@@ -62,7 +62,7 @@ public class TicTacToe {
 	}
 
 	private void makeMove(Player player, int move){
-		
+		board.setTile(move, player.getSymbol());
 	}
 
 	private boolean isGameOver(){
