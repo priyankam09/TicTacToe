@@ -47,7 +47,14 @@ public class Board {
     }
 
     public boolean isFull(){
-        return false;
+    	for(int i = 0; i < TILES; i++){
+			for (int j = 0; j < TILES; j++){
+				if(tiles[i][j] == ' '){
+					return false;
+				}
+			}
+		}
+		return true;
     }
 
     private int getRow(int tile){
