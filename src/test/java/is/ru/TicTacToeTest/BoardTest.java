@@ -39,4 +39,49 @@ public class BoardTest {
     	Board board = new Board();
     	assertTrue(!board.isFull());
     }
+
+    @Test
+    public void testRowVertically(){
+    	Board board = new Board();
+    	board.setTile(1, 'O');
+    	board.setTile(4, 'O');
+    	board.setTile(7, 'O');
+    	assertTrue(board.hasThreeInRow('O'));
+    }
+
+    @Test
+    public void testRowHorizontally(){
+    	Board board = new Board();
+    	board.setTile(1, 'O');
+    	board.setTile(2, 'O');
+    	board.setTile(3, 'O');
+    	assertTrue(board.hasThreeInRow('O'));
+    }
+
+    @Test
+    public void testRowVerticallyFalse(){
+    	Board board = new Board();
+    	board.setTile(1, 'O');
+    	board.setTile(5, 'O');
+    	board.setTile(3, 'O');
+    	assertTrue(!board.hasThreeInRow('O'));
+    }
+
+    @Test
+    public void testRowAcross(){
+    	Board board = new Board();
+    	board.setTile(1, 'O');
+    	board.setTile(5, 'O');
+    	board.setTile(9, 'O');
+    	assertTrue(board.hasThreeInRow('O'));
+    }
+
+    @Test
+    public void testThreeInRowFalse(){
+    	Board board = new Board();
+    	board.setTile(2, 'O');
+    	board.setTile(5, 'O');
+    	board.setTile(7, 'O');
+    	assertTrue(!board.hasThreeInRow('O'));
+    }
 }
