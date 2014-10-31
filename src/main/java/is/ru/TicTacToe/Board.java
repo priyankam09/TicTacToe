@@ -31,7 +31,10 @@ public class Board {
 		if(tile > 0 && tile < 10){
 			int i = (tile + 2) % 3;
 			int j = (tile - 1) / 3;
-			tiles[i][j] = symbol;
+			if(getTile(tile) == ' '){
+				tiles[i][j] = symbol;
+			}else
+				throw new IndexOutOfBoundsException("Tile already set");
 		}else
 			throw new IndexOutOfBoundsException("Tile out of bounds");
 
