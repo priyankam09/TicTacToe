@@ -5,49 +5,39 @@ public class TicTacToe {
 	private Player player1;
 	private Player player2;
 	private Board board;
+	private boolean playerTurn;
 
 	public TicTacToe() {
 		player1 = new Player("player1", 'X');
 		player2 = new Player("player2", 'O');
 		board = new Board();
-		getNames();
-		play();
+		playerTurn = true;
 	}
 
-	public void play() {
-		 boolean playerTurn = true;
-		 do{
-		 	if(playerTurn) {
-		 		int move = getMove(player1);
-		 		makeMove(player1, move);
-		 		playerTurn = false;
-		 	}
-		 	else {
-		 		int move = getMove(player2);
-		 		makeMove(player2, move);
-		 		playerTurn = true;
-		 	}
-		 	board.display();
-		 }while(!isGameOver());
+	public String play(int move) {
+		String symbol = Character.toString(getPlayerTurn().getSymbol());
+		makeMove(getPlayerTurn(), move);
+		switchPlayerTurn();
+		return symbol;
+	} 
 
-		 if(!board.hasWinner()){
-		 	System.out.println("It's a tie");
-		 }
-		 else {
-		 	System.out.println(whoIsWinner().getName() + " won!");	
-		 }
-		 System.out.println(player1.getName() + " Score: " + player1.getScore());
-		 System.out.println(player2.getName() + " Score: " + player2.getScore());
-		 if(playAgain()) {
-		 	resetAndPlay();
-		 }
-
+	public void switchPlayerTurn() {
+		playerTurn = !playerTurn;
 	}
 
+	public Player getPlayerTurn() {
+		if (this.playerTurn)
+		{
+			return player1;
+		}
+		else
+		{
+			return player2;
+		}
+	}
 
-	public void resetAndPlay(){
+	public void resetBoard(){
 		board = new Board();
-		play();
 	}
 
 	public boolean playAgain(){
