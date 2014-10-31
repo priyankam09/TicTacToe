@@ -37,6 +37,13 @@ public class TicTacToe {
 		 	}
 		 }while(!isGameOver());
 
+		 if(!board.hasWinner()){
+		 	System.out.print("It's a tie");
+		 }
+		 else {
+		 	System.out.print(whoIsWinner.getName() + " won!");
+		 }
+
 	}
 
 	private int getMove(Player player){
