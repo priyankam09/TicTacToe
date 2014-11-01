@@ -1,5 +1,6 @@
 $(document).ready(function() {
   play_game();
+  clear_board();
   
   $("#board").on("click", "td", function( event ) {
     var cell_id = $(this).attr('id');
@@ -26,7 +27,13 @@ function play_game() {
       url: "/playGame",
   }).done(function(result) {
       if(result) {
-          console.log("GamOver");
+          clear_board();
       }
   });
+}
+
+function clear_board(){
+  for(var i = 1; i < 10; i++){
+    $("#"+i).html("");
+  }
 }
