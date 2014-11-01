@@ -22,7 +22,7 @@ $(document).ready(function() {
 
   $("#newGame").on("click", function() {
     play_game();
-  }):
+  });
 
 });
 
