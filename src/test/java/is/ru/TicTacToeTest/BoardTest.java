@@ -26,6 +26,15 @@ public class BoardTest {
     }
 
     @Test
+    public void testTileIsNotSet(){
+        Board board = new Board();
+        board.setTile(9, 'O');
+        board.setTile(8, 'X');
+        board.setTile(1, 'O');
+        board.setTile(7, 'X');
+        assertTrue(!board.isTileSet(5));
+    }
+    @Test
     public void testIsBoardFull(){
     	Board board = new Board();
     	for(int i = 1; i < 10; i++){
