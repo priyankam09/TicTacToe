@@ -12,6 +12,7 @@ $(document).ready(function() {
       }).done(function(result) {
           if (result === "X" || result === "O") {
               $("#" + cell_id).html(result);
+              is_game_over();
           } else {
               $("#scoreBoard").html(result);
           }
@@ -41,4 +42,17 @@ function clear_board(){
   for(var i = 1; i < 10; i++){
     $("#" + i).html("");
   }
+}
+
+function is_game_over() {
+  $.ajax({
+      type: "post",
+      url: "/gameOver",
+  }).done(function(result) {
+      if(result === "") {
+
+      } else {
+        $("#scoreBoard").html(result);
+      }
+  });
 }
