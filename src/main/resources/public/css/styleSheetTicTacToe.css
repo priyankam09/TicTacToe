@@ -1,12 +1,13 @@
 td 
 {
-	height: 50%;
-	width: 50%;
-	align: center;	
+	height: 100;
+	width: 100;
+	text-align: center;	
+	border: 1px solid black;
 }
 
-table
+#board
 {
-	border: 1;
-	width: 50%;
+	border: 1px solid black;
 }
+

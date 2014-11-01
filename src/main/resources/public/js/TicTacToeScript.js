@@ -25,7 +25,7 @@ $(document).ready(function() {
         url: "/playGame",
     }).done(function(result) {
         if(result) {
-            alert("GamOver");
+            console.log("GamOver");
         }
     });
   }
