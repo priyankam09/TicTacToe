@@ -42,6 +42,7 @@ function clear_board(){
   for(var i = 1; i < 10; i++){
     $("#" + i).html("");
   }
+  $("#displayWinner").html("");
 }
 
 function is_game_over() {
