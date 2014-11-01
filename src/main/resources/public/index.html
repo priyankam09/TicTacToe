@@ -5,6 +5,8 @@
 	 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- load bootstrap for nicer ui -->
 	<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+
+  <link rel="stylesheet" type="text/css" href="css/styleSheetTicTacToe.css"/> 
 </head>
 <body>
 	<div class="container">
@@ -12,21 +14,21 @@
 		<div class="container">
 
 		<div class="container">
-			<table border="1" style="width:50%" id="board">
+			<table id="board">
 				<tr>
-    				<td id="1" style="height: 100px;"></td>
-    				<td id="2" style="height: 100px;"></td>
-    				<td id="3" style="height: 100px;"></td>
+    				<td id="1"></td>
+    				<td id="2"></td>
+    				<td id="3"></td>
   				</tr>
   				<tr>
-    				<td id="4" style="height: 100px;"></td>
-    				<td id="5" style="height: 100px;"></td>
-    				<td id="6" style="height: 100px;"></td>
+    				<td id="4"></td>
+    				<td id="5"></td>
+    				<td id="6"></td>
   				</tr>
   				<tr>
-    				<td id="7" style="height: 100px;"></td>
-    				<td id="8" style="height: 100px;"></td>
-    				<td id="9" style="height: 100px;"></td>
+    				<td id="7"></td>
+    				<td id="8"></td>
+    				<td id="9"></td>
   				</tr>
  			</table>
 		</div>
@@ -77,7 +79,7 @@
                     alert("GamOver");
                 }
             });
-        }
+          }
       }); 
     </script>
 </body>
