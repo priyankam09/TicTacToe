@@ -19,7 +19,6 @@ public class TicTacToe {
 		makeMove(getPlayerTurn(), move);
 		switchPlayerTurn();
 		return symbol;
-
 	} 
 
 	public void switchPlayerTurn() {
@@ -83,6 +82,7 @@ public class TicTacToe {
 	}
 
 	public boolean isGameOver(){
+		whoIsWinner();
 		return board.isFull() || board.hasWinner();
 	}
 
@@ -96,7 +96,6 @@ public class TicTacToe {
 			return player2;
 		}
 	}
-
 
 	public static void main(String[] args) {
 		new TicTacToe();
