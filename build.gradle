@@ -86,3 +86,10 @@ jacocoTestReport {
 }
 
 test.finalizedBy jacocoTestReport
+
+pmd {
+	ignoreFailures = true
+	reportsDir = file("${buildDir}/reports/pmd")
+	ruleSets = ["java-basic", "java-strings", "java-braces"]
+	sourceSets = [sourceSets.main]
+}
