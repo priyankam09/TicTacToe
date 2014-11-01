@@ -86,7 +86,7 @@ public class BoardTest {
     }
 
     @Test
-    public void testHasWinner(){
+    public void testHasWinnerAcross(){
     	Board board = new Board();
     	board.setTile(6, 'X');
     	board.setTile(1, 'O');
@@ -102,5 +102,24 @@ public class BoardTest {
     		X X O
 		*/
     	assertTrue(board.hasWinner());
+    }
+
+        @Test
+    public void testHasWinnerVertically(){
+        Board board = new Board();
+        board.setTile(1, 'O');
+        board.setTile(2, 'X');
+        board.setTile(4, 'O');
+        board.setTile(5, 'O');
+        board.setTile(6, 'X');
+        board.setTile(7, 'O');
+        board.setTile(8, 'X');
+        board.setTile(9, 'X');
+        /*
+            O X 
+            O O X
+            O X X
+        */
+        assertTrue(board.hasWinner());
     }
 }
