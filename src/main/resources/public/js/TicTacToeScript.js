@@ -14,7 +14,7 @@ $(document).ready(function() {
               $("#" + cell_id).html(result);
               is_game_over();
           } else {
-              $("#scoreBoard").html(result);
+              $("#displayWinner").html(result);
           }
       });
       event.preventDefault();
@@ -52,7 +52,7 @@ function is_game_over() {
       if(result === "") {
 
       } else {
-        $("#scoreBoard").html(result);
+        $("#displayWinner").html(result);
       }
   });
 }
