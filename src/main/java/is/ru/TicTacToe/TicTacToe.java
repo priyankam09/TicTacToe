@@ -82,18 +82,18 @@ public class TicTacToe {
 	}
 
 	public boolean isGameOver(){
-		whoIsWinner();
 		return board.isFull() || board.hasWinner();
 	}
 
-	public Player whoIsWinner(){
+	public String whoIsWinner(){
 		if(board.hasThreeInRow(player1.getSymbol())){ // did player1 win ?
-			player1.increaseScore();
-			return player1;
+			return player1.getName() + " wins";
 		}
-		else{
-			player2.increaseScore();
-			return player2;
+		else if (board.hasThreeInRow(player2.getSymbol())) {
+			return player2.getName() + " wins";
+		}
+		else {
+			return "It's a tie";
 		}
 	}
 
