@@ -18,15 +18,15 @@ $(document).ready(function() {
       event.preventDefault();
     };
   });
-
-  function play_game() {
-    $.ajax({
-        type: "post",
-        url: "/playGame",
-    }).done(function(result) {
-        if(result) {
-            console.log("GamOver");
-        }
-    });
-  }
 });
+
+function play_game() {
+  $.ajax({
+      type: "post",
+      url: "/playGame",
+  }).done(function(result) {
+      if(result) {
+          console.log("GamOver");
+      }
+  });
+}
