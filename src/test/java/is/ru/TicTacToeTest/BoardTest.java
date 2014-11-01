@@ -86,6 +86,14 @@ public class BoardTest {
     }
 
     @Test
+    public void testRowAcross2(){
+        Board board = new Board();
+        board.setTile(3, 'O');
+        board.setTile(5, 'O');
+        board.setTile(7, 'O');
+        assertTrue(board.hasThreeInRow('O'));
+    }
+    @Test
     public void testThreeInRowFalse(){
     	Board board = new Board();
     	board.setTile(2, 'O');
