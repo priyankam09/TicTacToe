@@ -23,4 +23,33 @@ public class TicTacToeTest {
 		game.makeMove(game.getPlayerTurn(), 3);
 		assertTrue(game.isGameOver());
 	}
+
+	@Test
+	public void testIsGameOver2(){
+		TicTacToe game = new TicTacToe();
+		game.makeMove(game.getPlayerTurn(), 1);
+		game.switchPlayerTurn();
+		game.makeMove(game.getPlayerTurn(), 2);
+		game.switchPlayerTurn();
+		game.makeMove(game.getPlayerTurn(), 3);
+		game.switchPlayerTurn();
+		game.makeMove(game.getPlayerTurn(), 5);
+		game.switchPlayerTurn();
+		game.makeMove(game.getPlayerTurn(), 4);
+		game.switchPlayerTurn();
+		game.makeMove(game.getPlayerTurn(), 6);
+		game.switchPlayerTurn();
+		game.makeMove(game.getPlayerTurn(), 8);
+		game.switchPlayerTurn();
+		game.makeMove(game.getPlayerTurn(), 7);
+		game.switchPlayerTurn();
+		game.makeMove(game.getPlayerTurn(), 9);
+
+		/*
+			XOX
+			XOO
+			OXO
+		*/
+		assertTrue(game.isGameOver());
+	}
 }
