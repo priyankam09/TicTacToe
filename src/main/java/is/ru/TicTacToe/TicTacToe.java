@@ -19,6 +19,7 @@ public class TicTacToe {
 		makeMove(getPlayerTurn(), move);
 		switchPlayerTurn();
 		return symbol;
+
 	} 
 
 	public void switchPlayerTurn() {
