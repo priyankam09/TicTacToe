@@ -35,7 +35,7 @@ public class TicTacToeWeb implements SparkApplication {
                 Integer number = Integer.valueOf(request.queryParams("id"));
 
                 if(game.isGameOver()) {
-                    return game.getScoreMessager();
+                    return game.whoIsWinner();
                 }
                 else {
                     return game.play(number);
@@ -47,7 +47,7 @@ public class TicTacToeWeb implements SparkApplication {
             @Override
             public Object handle(Request request, Response response){
                 if(game.isGameOver()) {
-                    return game.getScoreMessager();
+                    return game.whoIsWinner();
                 }
                 else{
                     return "";
