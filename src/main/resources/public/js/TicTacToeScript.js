@@ -19,6 +19,11 @@ $(document).ready(function() {
       event.preventDefault();
     };
   });
+
+  $("#newGame").on("click", function() {
+    play_game();
+  }):
+
 });
 
 function play_game() {
@@ -34,6 +39,6 @@ function play_game() {
 
 function clear_board(){
   for(var i = 1; i < 10; i++){
-    $("#"+i).html("");
+    $("#" + i).html("");
   }
 }
