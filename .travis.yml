@@ -1,12 +1,18 @@
 language: java
 jdk:
-   - openjdk7
-   - oraclejdk7
-script:
-   -./gradlew check
-   -./gradlew selenium Xvfb
+- openjdk7
+- oraclejdk7
+before_deploy:
+- ./gradlew check
 deploy:
-   provider: heroku
-   api_key: c327f78e-0c7c-4b13-8821-4fff4788ea35
-   app: hogridertictactoe
+  provider: heroku
+  api_key:
+    secure: KTUs2Y7WPa491CcprL5honmjoyC9QM/Lf5j2uAciUQ9pAIrtpuLsiDWsLxfMpcaEM/HYILHp7zmvR3lfVpvp+EELC6L3Y00XmS9/tUzeVIsjLtlajrL0ghM5xFIFgE3DIX7Nv/5Djeaz3+0PQ6+biew0B+vfqjM4yACkF5ah0IQ=
+  app: golem
+  on:
+    repo: HogRiders/TicTacToe
+provider: heroku
+api_key: c327f78e-0c7c-4b13-8821-4fff4788ea35
+app: hogridertictactoe
+script: -./gradlew seleniumXvfb
 
