@@ -40,6 +40,14 @@ public class IndexSeleniumTest{
 	}
 
     @Test
+    public void testWrong(){
+        driver = new FirefoxDriver();
+        driver.get(baseUrl);
+        assertEquals("Rassi prump", driver.getTitle());
+        driver.close();
+    }
+
+    @Test
     public void testClickOneTile(){
         driver = new FirefoxDriver();
         WebDriverWait webWait = new WebDriverWait(driver,20);
