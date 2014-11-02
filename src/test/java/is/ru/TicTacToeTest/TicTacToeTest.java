@@ -48,7 +48,7 @@ public class TicTacToeTest {
 		/*
 			XOX
 			XOO
-			OXO
+			OXX
 		*/
 		assertTrue(game.isGameOver());
 	}
