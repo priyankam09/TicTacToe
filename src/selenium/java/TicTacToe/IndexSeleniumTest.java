@@ -38,8 +38,22 @@ public class IndexSeleniumTest{
 	}
 
     @Test
-    public void testWrongTitle(){
+    public void testClickOneTile(){
+        WebDriverWait webWait = new WebDriverWait(driver,20);
         driver.get(baseUrl);
-        assertEquals("Rassi Prump", driver.getTitle());
+        driver.findElement(By.id("1")).click();
+        webWait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("1")),"X"));
+        assertEquals("X", driver.findElement(By.id("1")).getText());
+    }
+
+    @Test
+    public void testClickTwoTiles(){
+        WebDriverWait webWait = new WebDriverWait(driver,20);
+        driver.get(baseUrl);
+        driver.findElement(By.id("1")).click();
+        webWait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("1")),"X"));
+        driver.findElement(By.id("2")).click();        
+        webWait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("2")),"O"));
+        assertEquals("O", driver.findElement(By.id("2")).getText());
     }
 }
