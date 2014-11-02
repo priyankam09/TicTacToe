@@ -54,6 +54,23 @@ public class TicTacToeTest {
 	}
 
 	@Test
+	public void testIsGameOverFalse(){
+		TicTacToe game = new TicTacToe();
+		game.makeMove(game.getPlayerTurn(), 1);
+		game.switchPlayerTurn();
+		game.makeMove(game.getPlayerTurn(), 5);
+		game.switchPlayerTurn();
+		game.makeMove(game.getPlayerTurn(), 2);
+		game.switchPlayerTurn();
+		game.makeMove(game.getPlayerTurn(), 6);
+		/*
+			XX
+			 OO
+		*/
+		assertTrue(!game.isGameOver());
+	}
+
+	@Test
 	public void testWhoIsWinner(){
 		TicTacToe game = new TicTacToe();
 		game.makeMove(game.getPlayerTurn(), 1);
