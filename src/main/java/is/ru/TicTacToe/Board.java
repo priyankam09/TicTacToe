@@ -33,8 +33,8 @@ public class Board {
 		int j = getRow(tile);
     	if(tiles[i][j] == ' '){
     		return false;
-    	}else
-    		return true;
+    	} else {
+            return true;}
     }
 
     public void setTile(int tile, char symbol){
