@@ -1,6 +1,5 @@
 language: java
 jdk:
-- openjdk7
 - oraclejdk7
 install:
  - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
