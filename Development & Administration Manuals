@@ -1,12 +1,20 @@
 ##Development manual
 
-In this project, TicTacToe, we use Github as the source control system. The project is available at [https://github.com/HogRiders/TicTacToe.](https://github.com/HogRiders/TicTacToe)
+In this project, TicTacToe, we use Github as the source control system. 
+The project is available at [https://github.com/HogRiders/TicTacToe.](https://github.com/HogRiders/TicTacToe)
 
 Our main coding language is Java.
 We use Test Driven Development for writing all business logic and commit to Github after every successful modification. 
-Gradle is the build automation we use to automate the building, testing, publishing and deployment. We use a continuous integration service called Travis, which automatically tries to build and run our project after we commit and push to GitHub, and notifies us by email if something goes wrong. 
+Gradle is the build automation we use to automate the building, testing, publishing and deployment. 
+We use a continuous integration service called Travis, which automatically tries to build and run our project after 
+we commit and push to GitHub, and notifies us by email if something goes wrong. 
 Heroku is the external staging server we deploy to for running the game as a web app. 
-For code coverages we use the Jacoco plugin and for code inspection we use the PMD plugin. The HTML reports from code coverage and code inspection can be found under /build/jacocoHtml for code coverage and /build/reports/pmd for code inspection. The files can be opened in a browser, they show detailed information about how much of your code is tested and what is potentially wrong with the code. The tests are automatic so that whenever ./gradlew check is run, both code coverage and code inspection is run.
+For code coverages we use the Jacoco plugin and for code inspection we use the PMD plugin. 
+The HTML reports from code coverage and code inspection can be found under /build/jacocoHtml for code coverage 
+and /build/reports/pmd for code inspection. 
+The files can be opened in a browser, they show detailed information about how much of your code is tested 
+and what is potentially wrong with the code. 
+The tests are automatic so that whenever ./gradlew check is run, both code coverage and code inspection is run.
 
 Coding rules:
 The code shall be as loosely coupled as possible, always.
@@ -16,6 +24,11 @@ Names of tests should be describing, they may be long if needed for better descr
 
 ##Administartion manual
 
-For setting up the project and getting it to run, start with loggin in to Travis with your Github account, and connecting Travis to Github. Here are some instructions: [http://docs.travis-ci.com/user/getting-started/] (http://docs.travis-ci.com/user/getting-started/)
-You then have to create an account on [Heroku](https://id.heroku.com/login), then you can be added as a colaborator to the project.
-The rest is done automatically, i.e. when you modify something in the project, commit and push to Github, Travis will test the changes on a staging Heroku server. If everything runs smoothly and the changes do not brake anything, Travis will push these changes on the main Heroku server, where we should be able to run it.
+For setting up the project and getting it to run, start with loggin in to Travis with your Github account, 
+and connecting Travis to Github. Here are some instructions: [http://docs.travis-ci.com/user/getting-started/] (http://docs.travis-ci.com/user/getting-started/)
+You then have to create an account on [Heroku](https://id.heroku.com/login), 
+so you can be added as a colaborator to the project.
+The rest is done automatically, i.e. when you modify something in the project, commit and push to Github, 
+Travis will test the changes on a staging Heroku server. 
+If everything runs smoothly and the changes do not brake anything, Travis will push these changes on the main Heroku server, 
+where we should be able to run it.
