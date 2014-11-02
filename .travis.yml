@@ -1,11 +1,18 @@
 language: java
 jdk:
-   - openjdk7
-   - oraclejdk7
+- openjdk7
+- oraclejdk7
 script:
-  - ./gradlew check
-  - ./gradlew seleniumXvfb
+- ./gradlew check
+- heroku push --app hogridertictactoestaging
+- ./gradlew seleniumXvfb
+install:
+ - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+ - heroku plugins:install https://github.com/ddollar/heroku-push
 deploy:
-   provider: heroku
-   api_key: c327f78e-0c7c-4b13-8821-4fff4788ea35
-   app: hogridertictactoe
+  provider: heroku
+  api_key: c327f78e-0c7c-4b13-8821-4fff4788ea35
+  app: hogridertictactoe
+env:
+  global:
+    secure: C7iIteWn61rEq6p2zVe8XOkMiBKVugrgI3ta38QEjzdxH6NaBCwz+y8JyYsV4GzZTNak4paJ8ECXXIXjqv3KRIz99FU1zkMFREaE4hhp0F5S/iXmgIFXxlXtw5w1AeCu5sH5Q44p7hM2Kf9V8Xbj2vFOspzq3cMNB/JC8Io4teY=
