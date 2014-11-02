@@ -19,7 +19,7 @@ The tests are automatic so that whenever ./gradlew check is run, both code cover
 Coding rules:
 The code shall be as loosely coupled as possible, always.
 Comments and commits are written in english.
-Class names are written in Upper CamelCasing and functions and test in lower CamelCasing.
+Class names are written in Upper CamelCasing and functions and tests in lower CamelCasing.
 Names of tests should be describing, they may be long if needed for better description. 
 
 ##Administartion manual
