@@ -21,7 +21,7 @@ public class IndexSeleniumTest{
 	public static void before() {
     	// Will be run before all tests in class are run
     	driver = new FirefoxDriver();
-   		baseUrl = "https://hogridertictactoe.herokuapp.com/";
+   		baseUrl = "https://hogridertictactoestaging.herokuapp.com/";
     	driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
 
