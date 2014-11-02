@@ -1,7 +1,7 @@
 ##Development manual
 
 In this project, TicTacToe, we use Github as the source control system. 
-The project is available at [https://github.com/HogRiders/TicTacToe.](https://github.com/HogRiders/TicTacToe)
+The project is available at [HogRiderTicTacToe](https://github.com/HogRiders/TicTacToe)
 
 Our main coding language is Java.
 We use Test Driven Development for writing all business logic and commit to Github after every successful modification. 
