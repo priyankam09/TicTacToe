@@ -24,7 +24,7 @@ Names of tests should be describing, they may be long if needed for better descr
 
 ##Administartion manual
 
-For setting up the project and getting it to run, start with loggin in to Travis with your Github account, 
+For setting up the project and getting it to run, start with logging in to Travis with your Github account, 
 and connecting Travis to Github. You can get some instructions for this at http://docs.travis-ci.com/user/getting-started/.
 You then have to create an account on Heroku at https://signup.heroku.com/identity,
 so you can be added as a colaborator to the project.
