@@ -33,8 +33,10 @@ public class IndexSeleniumTest{
 
 	@Test
 	public void testTitle(){
+        driver = new FirefoxDriver();
 		driver.get(baseUrl);
 		assertEquals("TicTacToe - HogRiders", driver.getTitle());
+        driver.close();
 	}
 
     @Test
@@ -58,6 +60,26 @@ public class IndexSeleniumTest{
         driver.findElement(By.id("2")).click();        
         webWait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("2")),"O"));
         assertEquals("O", driver.findElement(By.id("2")).getText());
+        driver.close();
+    }
+
+    @Test
+    public void testPlayerOneWinner(){
+        driver = new FirefoxDriver();
+        WebDriverWait webWait = new WebDriverWait(driver,20);
+        driver.get(baseUrl);
+        driver.findElement(By.id("1")).click();
+        webWait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("1")),"X"));
+        driver.findElement(By.id("2")).click();        
+        webWait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("2")),"O"));
+        driver.findElement(By.id("4")).click();        
+        webWait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("4")),"X"));
+        driver.findElement(By.id("5")).click();        
+        webWait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("5")),"O"));
+        driver.findElement(By.id("7")).click();        
+        webWait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("7")),"X"));
+        webWait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("displayWinner")),"player1 wins"));
+        assertEquals("player1 wins", driver.findElement(By.id("displayWinner")).getText());
         driver.close();
     }
 }
