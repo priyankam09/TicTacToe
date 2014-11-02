@@ -59,12 +59,21 @@ public class BoardTest {
     }
 
     @Test
-    public void testRowHorizontally(){
-    	Board board = new Board();
-    	board.setTile(1, 'O');
-    	board.setTile(2, 'O');
-    	board.setTile(3, 'O');
-    	assertTrue(board.hasThreeInRow('O'));
+    public void testRowVertically2(){
+        Board board = new Board();
+        board.setTile(2, 'O');
+        board.setTile(5, 'O');
+        board.setTile(8, 'O');
+        assertTrue(board.hasThreeInRow('O'));
+    }
+
+    @Test
+    public void testRowVertically3(){
+        Board board = new Board();
+        board.setTile(3, 'O');
+        board.setTile(6, 'O');
+        board.setTile(9, 'O');
+        assertTrue(board.hasThreeInRow('O'));
     }
 
     @Test
@@ -103,6 +112,60 @@ public class BoardTest {
     }
 
     @Test
+    public void testRowHorizontally(){
+        Board board = new Board();
+        board.setTile(1, 'O');
+        board.setTile(2, 'O');
+        board.setTile(3, 'O');
+        board.setTile(4, 'X');
+        board.setTile(6, 'X');
+        board.setTile(8, 'X');
+        /*
+            O O O 
+            X   X
+              X
+        */
+        assertTrue(board.hasThreeInRow('O'));
+    }
+
+    @Test
+    public void testRowHorizontally2(){
+        Board board = new Board();
+        board.setTile(1, 'O');
+        board.setTile(2, 'X');
+        board.setTile(3, 'O');
+        board.setTile(4, 'X');
+        board.setTile(5, 'X');
+        board.setTile(6, 'X');
+        board.setTile(8, 'O');
+        /*
+            O X O 
+            X X X
+              O
+        */
+        assertTrue(board.hasThreeInRow('X'));
+    }
+
+    @Test
+    public void testRowHorizontally3(){
+        Board board = new Board();
+        board.setTile(1, 'O');
+        board.setTile(2, 'X');
+        board.setTile(3, 'X');
+        board.setTile(4, 'X');
+        board.setTile(5, 'X');
+        board.setTile(7, 'O');
+        board.setTile(8, 'O');
+        board.setTile(9, 'O');
+        /*
+            O X X 
+            X X 
+            O O O
+        */
+        assertTrue(board.hasThreeInRow('O'));
+    }
+
+    @Test
     public void testHasWinnerAcross(){
     	Board board = new Board();
     	board.setTile(6, 'X');
@@ -119,6 +182,25 @@ public class BoardTest {
     		X X O
 		*/
     	assertTrue(board.hasWinner());
+    }
+
+    @Test
+    public void testHasWinnerAcross2(){
+        Board board = new Board();
+        board.setTile(6, 'X');
+        board.setTile(1, 'X');
+        board.setTile(2, 'X');
+        board.setTile(3, 'O');
+        board.setTile(7, 'O');
+        board.setTile(5, 'O');
+        board.setTile(8, 'X');
+        board.setTile(9, 'O');
+        /*
+            X X O
+              O X
+            O X O
+        */
+        assertTrue(board.hasWinner());
     }
 
     @Test
@@ -141,6 +223,38 @@ public class BoardTest {
     }
 
     @Test
+    public void testHasWinnerVertically2(){
+        Board board = new Board();
+        board.setTile(1, 'O');
+        board.setTile(2, 'X');
+        board.setTile(5, 'X');
+        board.setTile(7, 'O');
+        board.setTile(8, 'X');
+        /*
+            O X 
+              X 
+            O X 
+        */
+        assertTrue(board.hasWinner());
+    }
+
+    @Test
+    public void testHasWinnerVertically3(){
+        Board board = new Board();
+        board.setTile(2, 'O');
+        board.setTile(3, 'X');
+        board.setTile(6, 'X');
+        board.setTile(7, 'O');
+        board.setTile(9, 'X');
+        /*
+              O X 
+                X 
+            O   X 
+        */
+        assertTrue(board.hasWinner());
+    }
+
+    @Test
     public void testHasWinnerHorizontally(){
         Board board = new Board();
         board.setTile(1, 'O');
@@ -158,20 +272,38 @@ public class BoardTest {
     }
 
     @Test
-    public void testHasWinnerAcross2(){
+    public void testHasWinnerHorizontally2(){
         Board board = new Board();
-        board.setTile(6, 'X');
-        board.setTile(1, 'X');
+        board.setTile(1, 'O');
         board.setTile(2, 'X');
         board.setTile(3, 'O');
+        board.setTile(4, 'X');
+        board.setTile(5, 'X');
+        board.setTile(6, 'X');
+        board.setTile(8, 'O');
+        /*
+            O X O 
+            X X X
+              O
+        */
+        assertTrue(board.hasWinner());
+    }
+
+    @Test
+    public void testHasWinnerHorizontally3(){
+        Board board = new Board();
+        board.setTile(1, 'O');
+        board.setTile(2, 'X');
+        board.setTile(3, 'X');
+        board.setTile(4, 'X');
+        board.setTile(5, 'X');
         board.setTile(7, 'O');
-        board.setTile(5, 'O');
-        board.setTile(8, 'X');
+        board.setTile(8, 'O');
         board.setTile(9, 'O');
         /*
-            X X O
-              O X
-            O X O
+            O X X 
+            X X 
+            O O O
         */
         assertTrue(board.hasWinner());
     }

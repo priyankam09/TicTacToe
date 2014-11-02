@@ -1,7 +1,7 @@
 ##Development manual
 
 In this project, TicTacToe, we use Github as the source control system. 
-The project is available at [HogRiderTicTacToe](https://github.com/HogRiders/TicTacToe)
+The project is available at https://github.com/HogRiders/TicTacToe.
 
 Our main coding language is Java.
 We use Test Driven Development for writing all business logic and commit to Github after every successful modification. 
@@ -25,10 +25,10 @@ Names of tests should be describing, they may be long if needed for better descr
 ##Administartion manual
 
 For setting up the project and getting it to run, start with loggin in to Travis with your Github account, 
-and connecting Travis to Github. Here are some instructions: [http://docs.travis-ci.com/user/getting-started/] (http://docs.travis-ci.com/user/getting-started/)
-You then have to create an account on [Heroku](https://id.heroku.com/login), 
+and connecting Travis to Github. You can get some instructions for this at http://docs.travis-ci.com/user/getting-started/.
+You then have to create an account on Heroku at https://signup.heroku.com/identity,
 so you can be added as a colaborator to the project.
-The rest is done automatically, i.e. when you modify something in the project, commit and push to Github, 
+Then the process runs automatically, i.e. when you modify something in the project, commit and push to Github, 
 Travis will test the changes on a staging Heroku server. 
 If everything runs smoothly and the changes do not brake anything, Travis will push these changes on the main Heroku server, 
-where we should be able to run it.
+where it should be able to run.
