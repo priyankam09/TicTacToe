@@ -16,5 +16,3 @@ deploy:
 env:
   global:
     secure: C7iIteWn61rEq6p2zVe8XOkMiBKVugrgI3ta38QEjzdxH6NaBCwz+y8JyYsV4GzZTNak4paJ8ECXXIXjqv3KRIz99FU1zkMFREaE4hhp0F5S/iXmgIFXxlXtw5w1AeCu5sH5Q44p7hM2Kf9V8Xbj2vFOspzq3cMNB/JC8Io4teY=
-after_success: echo "Build was successful" > DidItWorkFile
-echo "Build was a success all test succeded. Deployd on heroku master" | mail -s "Build success" arnarkari93@gmail.com
