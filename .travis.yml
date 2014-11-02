@@ -11,8 +11,5 @@ deploy:
   app: golem
   on:
     repo: HogRiders/TicTacToe
-provider: heroku
-api_key: c327f78e-0c7c-4b13-8821-4fff4788ea35
-app: hogridertictactoe
 script: -./gradlew seleniumXvfb
 
