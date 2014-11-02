@@ -36,4 +36,10 @@ public class IndexSeleniumTest{
 		driver.get(baseUrl);
 		assertEquals("TicTacToe - HogRiders", driver.getTitle());
 	}
+
+    @Test
+    public void testWrongTitle(){
+        driver.get(baseUrl);
+        assertEquals("Rassi Prump", driver.getTitle());
+    }
 }
