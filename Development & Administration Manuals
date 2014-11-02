@@ -22,13 +22,13 @@ Comments and commits are written in english.
 Class names are written in Upper CamelCasing and functions and tests in lower CamelCasing.
 Names of tests should be describing, they may be long if needed for better description. 
 
-##Administartion manual
+##Administration manual
 
 For setting up the project and getting it to run, start with logging in to Travis with your Github account, 
 and connecting Travis to Github. You can get some instructions for this at http://docs.travis-ci.com/user/getting-started/.
 You then have to create an account on Heroku at https://signup.heroku.com/identity,
-so you can be added as a colaborator to the project.
+so you can be added as a collaborator to the project.
 Then the process runs automatically, i.e. when you modify something in the project, commit and push to Github, 
 Travis will test the changes on a staging Heroku server. 
-If everything runs smoothly and the changes do not brake anything, Travis will push these changes on the main Heroku server, 
+If everything runs smoothly and the changes do not break anything, Travis will push these changes on the main Heroku server, 
 where it should be able to run.
