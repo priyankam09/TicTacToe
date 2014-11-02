@@ -14,7 +14,7 @@ $(document).ready(function() {
               $("#" + cell_id).html(result);
               is_game_over();
           } else {
-              $("#displayWinner").html(result);
+              $("#displayWinner").html(result).addClass('bg-info');
           }
       });
       event.preventDefault();
@@ -53,7 +53,7 @@ function is_game_over() {
       if(result === "") {
 
       } else {
-        $("#displayWinner").html(result);
+        $("#displayWinner").html(result).addClass('bg-info');
       }
   });
 }

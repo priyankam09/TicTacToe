@@ -193,4 +193,20 @@ public class BoardTest {
         */
         assertTrue(!board.hasWinner());
     }
+
+    @Test
+    public void testHasNoWinner2(){
+        Board board = new Board();
+        board.setTile(1, 'X');
+        board.setTile(4, 'O');
+        board.setTile(2, 'X');
+        board.setTile(5, 'O');
+        board.setTile(6, 'X');
+        board.setTile(3, 'O');
+        /*
+            X X O
+            O O X
+        */
+        assertTrue(!board.hasWinner());
+    }
 }

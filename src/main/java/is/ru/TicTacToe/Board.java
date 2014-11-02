@@ -51,7 +51,7 @@ public class Board {
     	if (getTile(3) != ' ' && getTile(3) == getTile(5) && getTile(3) == getTile(7)){
     		return true;
     	} // RowHorizontally -
-    	for(int i = 1; i <= TILES; i++){
+    	for(int i = 1; i <= TILES; i = i + 3){
     		if (getTile(i) != ' ' && getTile(i) == getTile(i + 1) && getTile(i) == getTile(i + 2)) {
     			return true;
     		}
@@ -72,7 +72,7 @@ public class Board {
     	if (getTile(3) == symbol && getTile(5) == symbol && getTile(7) == symbol){
     		return true;
     	} // RowHorizontally -
-    	for(int i = 1; i <= TILES; i++){
+    	for(int i = 1; i <= TILES; i = i + 3){
     		if (getTile(i) == symbol && getTile(i + 1) == symbol && getTile(i + 2) == symbol) {
     			return true;
     		}
