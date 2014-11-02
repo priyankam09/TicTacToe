@@ -1,5 +1,5 @@
 package is.ru.TicTacToe;
-
+//character class
 public class Player {
 	private String name;
 	private int score;
