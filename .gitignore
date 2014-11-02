@@ -4,3 +4,4 @@ build/
 gradle-app.setting
 .DS_STORE
 tmp
+*travis.log
