@@ -39,15 +39,18 @@ public class IndexSeleniumTest{
 
     @Test
     public void testClickOneTile(){
+        driver = new FirefoxDriver();
         WebDriverWait webWait = new WebDriverWait(driver,20);
         driver.get(baseUrl);
         driver.findElement(By.id("1")).click();
         webWait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("1")),"X"));
         assertEquals("X", driver.findElement(By.id("1")).getText());
+        driver.close();
     }
 
     @Test
     public void testClickTwoTiles(){
+        driver = new FirefoxDriver();
         WebDriverWait webWait = new WebDriverWait(driver,20);
         driver.get(baseUrl);
         driver.findElement(By.id("1")).click();
@@ -55,5 +58,6 @@ public class IndexSeleniumTest{
         driver.findElement(By.id("2")).click();        
         webWait.until(ExpectedConditions.textToBePresentInElement(driver.findElement(By.id("2")),"O"));
         assertEquals("O", driver.findElement(By.id("2")).getText());
+        driver.close();
     }
 }
