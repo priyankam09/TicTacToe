@@ -11,5 +11,5 @@ deploy:
   app: golem
   on:
     repo: HogRiders/TicTacToe
-script: -./gradlew seleniumXvfb
+
 
