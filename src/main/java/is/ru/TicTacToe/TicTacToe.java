@@ -57,8 +57,4 @@ public class TicTacToe {
 			return "It's a tie";
 		}
 	}
-
-	public static void main(String[] args) {
-		new TicTacToe();
-	}
 }
