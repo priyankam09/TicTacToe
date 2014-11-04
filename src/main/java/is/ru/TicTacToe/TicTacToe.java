@@ -20,7 +20,14 @@ public class TicTacToe {
 		switchPlayerTurn();
 		return symbol;
 	} 
-
+	
+	public boolean HogRider() {
+		if(playerTurn)	
+			return true;
+		else
+			return false;
+	}
+	
 	public void switchPlayerTurn() {
 		playerTurn = !playerTurn;
 	}
