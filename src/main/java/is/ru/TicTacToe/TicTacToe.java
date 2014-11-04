@@ -21,6 +21,15 @@ public class TicTacToe {
 		return symbol;
 	} 
 
+	public boolean func(){
+		if(playerTurn){
+			return true;
+		}
+		else { 
+			return false;
+		}
+	}
+
 	public void switchPlayerTurn() {
 		playerTurn = !playerTurn;
 	}
